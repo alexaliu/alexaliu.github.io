@@ -28,8 +28,25 @@ $.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete) 
 };
 
 $('.sidebar-list>li').click(function(){
+    // Swap sidebar colors
     $('.sidebar-list').children().each(function(){
-        $(this).removeClass('sidebar-active')
+        $(this).removeClass('sidebar-active');
     })
-    $(this).toggleClass('sidebar-active')
+    $(this).toggleClass('sidebar-active');
+
+    // Swap content text
+    selected = $('.sidebar-active').text();
+    $('.content').each(function(){
+        $(this).addClass('nodisplay');
+    })
+    $('.' + selected.toLowerCase()).removeClass('nodisplay');
 })
+
+// $( window ).resize(function(){
+//     var fontSize = $('.sidebar-name-div').width() * 0.1
+//     $('.sidebar-name').css('font-size', fontSize);
+//     console.log(fontSize);
+// });
+
+
+
