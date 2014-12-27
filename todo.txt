@@ -1,4 +1,4 @@
 1. i need a better icon for the arrow
 2. names aren’t overlaid
 3. and make the scrollbar fit in the about section better
-4. JQUERY DOESN'T GET GRABBED??
+4. JQUERY DOESN'T GET GRABBED??  Resolved: Im trash and extensions are hard
