@@ -32,7 +32,7 @@ body{
     background: -ms-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
     background: linear-gradient(to bottom,  #c53c52 0%,#c14f5e 100%);
     border: none;
-    width: 100%;
+    /*width: 100%;*/
     -webkit-transition: width 1s;
     -o-transition: width 1s;
     transition: width 1s;
@@ -138,7 +138,7 @@ body{
 .social-media{
     margin: auto;
     text-align: center;
-    margin-top: 30px;
+    margin: 10px 0;
 }
 .fa{
     color: #e2e2e2;
@@ -155,6 +155,21 @@ body{
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
+}
+
+.profile{
+    /*background-position: center;*/
+    text-align:center;
+    background: url("Profile.jpg");
+    border-radius: 87.5px;
+    width: 175px;
+    height: 175px;
+    background-size: 175px 175px;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 10px;
+    /*padding-top: 150px;*/
+    /*background-position: 50%;*/
 }
 
 .content-col{
@@ -220,7 +235,7 @@ body{
     z-index: 1100;
     position: absolute;
     top: 1px;
-    right: 1px;
+    /*right: 1px;*/
     width: 7px;
     height: 100%;
     background-color: rgba(0,0,0,0);
@@ -277,7 +292,7 @@ html
 }
 .scroll-pane
 {
-    height: 80%;
+    height: 100%;
     overflow: auto;
 }
 .horizontal-only
@@ -290,7 +305,7 @@ html
 /*Fixes sidebar sizing with JScrollPane*/
 @media (min-width: 992px){
     .col-md-2 {
-        width: 16.66666667% !important;
+        width: 16.66666667%;
     }
 }
 

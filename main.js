@@ -2,7 +2,6 @@ var navArrowDeg = true
 $('.nav-no-fix').click(function(){
     $('.navbar').toggleClass('navbar-fixed-top navbar-static-top');
     $('.page-wrapper').toggleClass('page-wrapper-fixed page-wrapper-static');
-    // $('.nav-no-fix').toggleClass('glyphicon-chevron-up glyphicon-chevron-down')
     if(navArrowDeg){
         $('.nav-no-fix').animateRotate(360, 180);
     } else {
@@ -55,7 +54,7 @@ var pageScroll = function(){
                 var container = $('#full-page-container');
                 // Temporarily make the container tiny so it doesn't influence the
                 // calculation of the size of the document
-                container.css({'width': 1, 'height': 1});
+                container.css({'width': 0, 'height': 0});
                 // Now make it the size of the window...
                 container.css({'width': win.width(), 'height': win.height()});
                 isResizing = false;
@@ -72,12 +71,15 @@ var pageScroll = function(){
     // Internal scrollpanes
     $('.scroll-pane').jScrollPane({contentWidth: '500px'});
     sidebarFix();
+    $('.navbar').css('width', '');
+    // $('.navbar').css('width', '100%');
 };
 
 // Scrollbars make sidebars 20 pixels too short. This fixes that
 var sidebarFix = function(){
     var sidebar = $('.sidebar-list-div')
     var width = sidebar.width()
+    console.log(width);
     sidebar.css('width', width + 20);
     $(sidebar.children()[0]).css('width', '100%');
 }
