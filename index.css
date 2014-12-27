@@ -1,8 +1,13 @@
+*{
+    -webkit-transition: color 2.5s;
+    -o-transition: color 2.5s;
+    transition: color 2.5s;
+}
 body{
     font-weight: 200;
     color: #222;
     overflow-y: hidden;
-
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .page-wrapper-fixed{
@@ -37,7 +42,7 @@ body{
     cursor: default;
 }
 .navbar-brand{
-    font-size: 35px;
+    font-size: 45px;
     text-transform: uppercase;
     color: #232323 !important;
     font-weight: 600;
@@ -83,14 +88,13 @@ body{
         height: 65px;
     }
     .sidebar-name{
-        font-size: 35px;
+        font-size: 40px;
         text-transform: uppercase;
         color: #ddd;
         font-weight: 600;
         overflow: hidden;
         margin: 0 -20px;
         padding-left: 0;
-        padding-top: 2.5px;
         text-align: center;
         vertical-align: middle;
         cursor: default;
@@ -112,29 +116,54 @@ body{
         margin-right: -20px;
         margin-left: -60px;
         text-align: center;
+        -webkit-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
+        -o-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
+        transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
     }
     .sidebar-list>li:hover{
         background: #f6f6f6;
         color: #c14f5e;
-        font-size: 20px;
-        -webkit-transition: background-color 0.4s, font-weight 0.25s;
-        -o-transition: background-color 0.4s, font-weight 0.25s;
-        transition: background-color 0.4s, font-weight 0.25s;
+        /*font-size: 21px;*/
+        -webkit-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
+        -o-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
+        transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
     }
     .sidebar-active{
         background: #f6f6f6;
         color: #c14f5e;
-        font-size: 20px;
+        /*font-size: 21px;*/
     }
 }
 
+.social-media{
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+.fa{
+    color: #e2e2e2;
+    font-size: 30px;
+    margin: 7.5px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.fa:hover{
+    color: #c14f5e;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
 
 .content-col{
     top: 15px;
     background: #f6f6f6;
-    /*color: #eee;*/
     height: 100%;
-/*    background:  
+/*    
+    color: #eee;
+    background:  
         linear-gradient(
             rgba(0, 0, 0, 0.5), 
             rgba(0, 0, 0, 0.5)
@@ -218,7 +247,7 @@ body{
     transition: width 0.1s;
 }
 .jspDrag{
-    background: rgba(102, 102, 102, 0.80);
+    background: rgba(102, 102, 102, 0.60);
     position: relative;
     top: 0;
     left: 0;
