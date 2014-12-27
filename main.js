@@ -42,6 +42,7 @@ $('.sidebar-list>li').click(function(){
     pageScroll();
 });
 
+// Full body scroll example from JScrollPane
 var pageScroll = function(){
     var win = $(window);
     // Full body scroll
@@ -70,18 +71,36 @@ var pageScroll = function(){
 
     // Internal scrollpanes
     $('.scroll-pane').jScrollPane({contentWidth: '500px'});
+    sidebarFix();
+};
+
+// Scrollbars make sidebars 20 pixels too short. This fixes that
+var sidebarFix = function(){
     var sidebar = $('.sidebar-list-div')
     var width = sidebar.width()
     sidebar.css('width', width + 20);
     $(sidebar.children()[0]).css('width', '100%');
-};
+}
+
+// I think the scrollbars make 100vh not work properly when the content is longer
+// than 100vh, so this will figure out whether the height should be 100% or 100vh,
+// where 100vh will entirely fill up the entire contect column with the proper background
+var heightResize = function(){
+    var content = $('.content-col')
+    content.css('height', '100%');
+    var height1 = content.height()
+    content.css('height', '100vh');
+    var height2 = content.height()
+    if(height1 > height2){
+        content.css('height', '100%');
+    }
+}
 
 $( window ).resize(function(){
     $('.scroll-pane').jScrollPane({contentWidth: '500px'});
-    var sidebar = $('.sidebar-list-div')
-    var width = sidebar.width()
-    sidebar.css('width', width + 20);
-    $(sidebar.children()[0]).css('width', '100%');
+    sidebarFix();
+    heightResize();
 });
 
 $(pageScroll);
+$(heightResize);
