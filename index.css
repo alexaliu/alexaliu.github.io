@@ -2,6 +2,7 @@ body{
     font-weight: 200;
     color: #222;
     overflow-y: hidden;
+
 }
 
 .page-wrapper-fixed{
@@ -75,8 +76,7 @@ body{
         display: block;
         padding-top: 5px;
         overflow: hidden;
-        /*overflow-y: auto;*/
-        background-color: #333;
+        background-color: #2e2e2e;
         padding: 20px;
     }
     .sidebar-name-div{
@@ -132,6 +132,17 @@ body{
 .content-col{
     top: 15px;
     background: #f6f6f6;
+    /*color: #eee;*/
+    height: 100%;
+/*    background:  
+        linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ),
+        url('Rejuvenate.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
+    /*background-position: center;*/
 }
 .content{
     margin-left: -25px;
@@ -140,7 +151,8 @@ body{
     padding-right: 15px;
     margin-top: -5px;
     padding-top: 10px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
+
 }
 
 .nodisplay{
