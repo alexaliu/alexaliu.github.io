@@ -1,5 +1,3 @@
-console.log($('.sidebar').width())
-
 var navArrowDeg = true
 $('.nav-no-fix').click(function(){
     $('.navbar').toggleClass('navbar-fixed-top navbar-static-top');
@@ -11,8 +9,7 @@ $('.nav-no-fix').click(function(){
         $('.nav-no-fix').animateRotate(180, 0);
     }
     navArrowDeg = !navArrowDeg
-
-})
+});
 
 // http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
 $.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete) {
@@ -42,14 +39,10 @@ $('.sidebar-list>li').click(function(){
         $(this).addClass('nodisplay');
     })
     $('.' + selected.toLowerCase()).removeClass('nodisplay');
-})
-
-$( window ).resize(function(){
-    $('.scroll-pane').jScrollPane({showArrows: true, contentWidth: '500px'});
+    pageScroll();
 });
 
-
-$(function(){
+var pageScroll = function(){
     var win = $(window);
     // Full body scroll
     var isResizing = false;
@@ -65,25 +58,30 @@ $(function(){
                 // Now make it the size of the window...
                 container.css({'width': win.width(), 'height': win.height()});
                 isResizing = false;
-                container.jScrollPane({'showArrows': true});
+                container.jScrollPane();
             }
         }
     ).trigger('resize');
 
-    // Workaround for known Opera issue which breaks demo (see
-    // http://jscrollpane.kelvinluck.com/known_issues.html#opera-scrollbar )
+    // Workaround for known Opera issue 
     $('body').css('overflow', 'hidden');
-
-    // IE calculates the width incorrectly first time round (it
-    // doesn't count the space used by the native scrollbar) so
-    // we re-trigger if necessary.
-    if ($('#full-page-container').width() != win.width()) {
-        win.trigger('resize');
-    }
+    // IE
+    if ($('#full-page-container').width() != win.width()) { win.trigger('resize'); }
 
     // Internal scrollpanes
-    $('.scroll-pane').jScrollPane({showArrows: true, contentWidth: '500px'});
+    $('.scroll-pane').jScrollPane({contentWidth: '500px'});
+    var sidebar = $('.sidebar-list-div')
+    var width = sidebar.width()
+    sidebar.css('width', width + 20);
+    $(sidebar.children()[0]).css('width', '100%');
+};
+
+$( window ).resize(function(){
+    $('.scroll-pane').jScrollPane({contentWidth: '500px'});
+    var sidebar = $('.sidebar-list-div')
+    var width = sidebar.width()
+    sidebar.css('width', width + 20);
+    $(sidebar.children()[0]).css('width', '100%');
 });
 
-
-
+$(pageScroll);

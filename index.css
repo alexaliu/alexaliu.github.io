@@ -36,12 +36,16 @@ body{
     cursor: default;
 }
 .navbar-brand{
-    font-size: 36px;
+    font-size: 35px;
     text-transform: uppercase;
     color: #232323 !important;
     font-weight: 600;
     height: 100%;
     margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+    max-height: 65px;
 }
 .navbar-static-top{
     z-index: 1030;
@@ -64,14 +68,14 @@ body{
 @media (min-width: 768px){
     .sidebar{
         position: fixed;
-        top: 0;
+        top: -15px;
         bottom: 0;
         left: 0;
         z-index: 1000;
         display: block;
         padding-top: 5px;
         overflow: hidden;
-        overflow-y: auto;
+        /*overflow-y: auto;*/
         background-color: #333;
         padding: 20px;
     }
@@ -93,6 +97,7 @@ body{
         max-height: 65px;
     }
     .sidebar-list-div{
+        margin-left: -20px;
     }
     .sidebar-list{
         color: #ccc;
@@ -121,6 +126,13 @@ body{
         color: #c14f5e;
         font-size: 20px;
     }
+    .sidebar-arrow{
+        color: #ccc;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
+    }
 }
 
 
@@ -136,7 +148,8 @@ body{
     margin-right: -15px;
     padding-right: 15px;
     margin-top: -5px;
-    padding-top: 5px;
+    padding-top: 10px;
+    margin-bottom: 25px;
 }
 
 .nodisplay{
@@ -169,8 +182,55 @@ body{
     width: 100% !important;
 }
 
+/*Style that scrollbar*/
 .jspVerticalBar{
     z-index: 1100;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 7px;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+}
+.jspHorizontalBar{
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(0,0,0,0);
+}
+.jspVerticalBar *, .jspHorizontalBar *{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    /* fix IE 7,8 to work with jQuery fadeIn/Out */
+    opacity:inherit;
+    filter:inherit;
+}
+.jspVerticalBar:hover, .jspHorizontalBar:hover, .jspVerticalBar *:hover, .jspHorizontalBar *:hover{
+    width: 9px;
+    -webkit-transition: width 0.1s;
+    -o-transition: width 0.1s;
+    transition: width 0.1s;
+}
+.jspDrag{
+    background: rgba(102, 102, 102, 0.80);
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: default;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;        
+    -ms-border-radius:5px;            
+    -o-border-radius:5px;                
+}
+.jspDrag:hover{
+    background: rgba(82, 82, 82, 0.80);
+    -webkit-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
 }
 
 /*From the JScrollPane Example for full page bars*/
