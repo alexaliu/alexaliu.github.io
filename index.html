@@ -14,6 +14,7 @@
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Oswald:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="nanoscroller.css" type="text/css">
     <link type="text/css" rel="stylesheet" href="index.css">
 
@@ -32,7 +33,10 @@
                       <p class="navbar-brand">Alex Liu</p>
                     </div>
                     <div class="navbar-right nav-no-fix-div">
-                        <span class="glyphicon glyphicon-chevron-up nav-no-fix"></span>
+                        <!-- <span class="fa-stack fa-lg thumbtack"> -->
+                            <!-- <i class="fa fa-square fa-stack-2x"></i> -->
+                            <i class="fa fa-thumb-tack nav-no-fix fa-inverse fa-2x"></i>
+                        <!-- </span> -->
                     </div>
               </div><!-- /.container-fluid -->
         </nav>
@@ -47,7 +51,9 @@
                 
                     <div class="sidebar-list-div nano">
                         <div class="nano-content">
-                            <div class="profile"></div>
+                            <div>
+                                <img src="Profile.jpg" alt="Profile" class="profile img-circle img-responsive">
+                            </div>
                         
                             <div class="social-media">
                                 <a href="https://www.facebook.com/ArrexRu" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -67,14 +73,21 @@
                 </div>
 
                 <div class="col-md-offset-2 col-sm-offset-2 col-md-10 col-sm-10 content-col">
-                    <div class="content home">
-                        <h1>Hi</h1>
-                        <p>Hi</p>
+                    <div class="content home show text-center">
+                            <!-- <h1>Hi,</h1> -->
+                            <div class="home-hi">
+                                <p>
+                                    <div class="pull-left home-header">Hi!</div> 
+                                    <div class="home-text text-left">
+                                        <p>I'm Alex, a Fourth year Electrical Engineering and Computer Science major at UC Berkeley.</p>
+                                    </div>
+                                </p>
+                            </div>
                        
                     </div>
-                    <div class="content about nodisplay">
+                    <div class="content about hidden">
                     </div>
-                    <div class="content resume nodisplay">
+                    <div class="content resume hidden">
                         <embed width="100%" height="100%" name='plugin' src="Resume.pdf" type="application/pdf">
                     </div>                  
                 
@@ -93,6 +106,7 @@
     <script src="ie10-viewport-bug-workaround.js"></script>
     <!-- the mousewheel plugin - optional to provide mousewheel support -->
     <script type="text/javascript" src='jquery.nanoscroller.min.js'></script>
+    <script type="text/javascript" src='jquery.color-2.1.2.min.js'></script>
     <script src="main.js"></script>
 
   

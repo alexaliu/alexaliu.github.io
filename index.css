@@ -1,5 +1,7 @@
 *{
-
+    -webkit-transition: width 0.2s;
+    -o-transition: width 0.2s;
+    transition: width 0.2s;
 }
 body{
     font-weight: 200;
@@ -14,12 +16,12 @@ body{
 }
 .nano-pane{ 
     z-index: 1100;
-    background: #888; 
     width: 7px !important;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0) !important;
 }
 .nano-slider{
     z-index: 1100;
-    background: #111; 
     width: 7px !important;
     margin: 0 !important;
 }
@@ -57,7 +59,7 @@ body{
 }
 .navbar-brand{
     font-size: 45px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #232323 !important;
     font-weight: 600;
     height: 100%;
@@ -66,6 +68,8 @@ body{
     vertical-align: middle;
     cursor: default;
     max-height: 65px;
+    font-family: 'Lobster', cursive;
+
 }
 .navbar-static-top{
     z-index: 1030;
@@ -76,10 +80,23 @@ body{
     margin: 15px 0;
     float: right;
 }
+.thumbtack{
+    /*background: white;*/
+}
+/*.fa-square-o{
+    background: #fff;
+}*/
+.thumbtack:hover{
+    /*color: #ccc;*/
+}
 .nav-no-fix{
-    font-size: 35px;
+    /*font-size: 35px;*/
     cursor: pointer;
-    top: 4px;
+    /*top: 4px;*/
+    color: #232323;
+    transform: rotate(45deg);
+    padding-top: 6px;
+    /*padding-right: 1.5px;*/
 }
 
 .sidebar{
@@ -108,7 +125,7 @@ body{
         font-weight: 600;
         overflow: hidden;
         margin: 0 -20px;
-        padding-left: 0;
+        /*padding-right: 10px;*/
         text-align: center;
         vertical-align: middle;
         cursor: default;
@@ -122,14 +139,15 @@ body{
         list-style: none;
         font-size: 18px;
         text-transform: uppercase;
-        cursor: pointer;
-        height: 61.5%;
+        padding-bottom: 60px;
+
     }
     .sidebar-list>li{
         padding: 15px;
         margin-right: -20px;
         margin-left: -60px;
         text-align: center;
+        cursor: pointer;
         -webkit-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
         -o-transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
         transition: background-color 0.2s, font-weight 0.2s, color 0.2s, font-size 0.2s;
@@ -154,7 +172,7 @@ body{
     text-align: center;
     margin: 10px 0;
 }
-.fa{
+.social-media>a>i.fa{
     color: #e2e2e2;
     font-size: 30px;
     margin: 7.5px;
@@ -164,30 +182,31 @@ body{
     -o-transition: color 0.2s;
     transition: color 0.2s;
 }
-.fa:hover{
-    color: #c14f5e;
+.social-media>a>i.fa:hover{
+    color: #c53c52;
+    color: -moz-linear-gradient(top,  #c53c52 0%, #c14f5e 100%);
+    color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c53c52), color-stop(100%,#c14f5e));
+    color: -webkit-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
+    color: -o-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
+    color: -ms-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
+    color: linear-gradient(to bottom,  #c53c52 0%,#c14f5e 100%);
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
 }
 
 .profile{
-    /*background-position: center;*/
     text-align:center;
-    background: url("Profile.jpg");
-    border-radius: 87.5px;
     width: 175px;
-    height: 175px;
     background-size: 175px 175px;
     background-repeat: no-repeat;
     margin: auto;
     margin-top: 10px;
-    /*padding-top: 150px;*/
-    /*background-position: 50%;*/
+    background-position: 50%;
 }
 
 .content-col{
-    top: 15px;
+    margin-top: 14.5px;
     background: #f6f6f6;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -210,15 +229,67 @@ body{
     color: #eee;
     background:  
         linear-gradient(
-            rgba(0, 0, 0, 0.5), 
-            rgba(0, 0, 0, 0.5)
+            rgba(46, 46, 46, 0.9), 
+            rgba(46, 46, 46, 0.5)
         ),
         url('Rejuvenate.jpg');
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
-    /*background-size: 100% 90%;*/
+    background-size: 100% 100%;
+    /*padding-left: 100px;*/
+    /*margin: auto;*/
+    /*text-align: center;*/
+    padding-top: 20px;
     /*background: #2e2e2e;*/
+}
+/*.home>p>span{
+    text-align: center;
+    float:left;
+    font-size: 82px;
+    font-weight: 400;
+    padding-right: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Lobster', cursive;
+}*/
+.home-hi{
+    /*margin: 0 15%;*/
+}
+@media (min-width: 768px){
+    .home-hi{
+        margin-left: 17.5%;
+        margin-right: 12.5%;
+    }
+}
+@media (min-width: 1400px){
+    .home-hi{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+@media (min-width: 2000px){
+    .home-hi{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+@media (min-width: 2900px){
+    .home-hi{
+        margin-left: 33.333%;
+        margin-right: 25%;
+    }
+}
+.home-header{
+    /*float:left;*/
+    font-size: 82px;
+    font-weight: 400;
+    font-family: 'Lobster', cursive;
+
+}
+.home-text{
+    padding-left: 115px;
+    padding-top: 22.5px;
+    font-size: 25px;
 }
 .resume{
     height: 100%;
@@ -247,24 +318,4 @@ body{
 
 .divider{
     background-color: #959595 !important;
-}
-
-/*From the JScrollPane Example for full page bars*/
-html
-{
-    overflow: auto;
-}
-#full-page-container
-{
-    overflow: auto;
-}
-.scroll-pane
-{
-    height: 100%;
-    overflow: auto;
-}
-.horizontal-only
-{
-    height: auto;
-    max-height: 200px;
 }
