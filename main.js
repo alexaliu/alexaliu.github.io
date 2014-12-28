@@ -34,7 +34,7 @@ $('.sidebar-list>li').click(function(){
 
     // Swap content text
     $('.show').toggleClass('show hidden')
-    $('.' + $('.sidebar-active').text().toLowerCase()).toggleClass('show hidden');
+    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
 
     heightResize();
 });

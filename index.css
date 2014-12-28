@@ -303,8 +303,29 @@ body{
 }
 .resume-pdf{
     font-size: 30px;
-    text-align: center;
+    /*text-align: center;*/
 }
+.pdf-dl{
+    color: #3a3a3a;
+    position: fixed;
+    padding-top: 10px;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.pdf-dl:visited{
+    color: #3a3a3a;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.pdf-dl:hover{
+    color: #c53c52;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
 
 .nodisplay{
     display: none;
@@ -332,11 +353,14 @@ body{
 }
 
 /*HTML Resume*/
-#page_1 {position:relative; overflow: hidden;margin: 20px auto 68px auto;padding: 15px 15px 35px 35px;border: 1px solid #aaa ;width: 730px;
+#page_1 {
+    position:relative; overflow: hidden;margin: 20px auto 68px auto;
+    padding: 15px 15px 35px 35px;border: 1px solid #aaa ;width: 730px;
     -webkit-box-shadow: 2px 2px 6px #ddd;
     box-shadow: 2px 2px 6px #ddd;
     background: #fbfbfb;
-    overflow-x: auto;}
+    overflow-x: auto;
+}
 
 #page_1 #dimg1 {position:absolute;top:12px;left:0px;z-index:-1;width:670px;height:50px;}
 #page_1 #dimg1 #img1 {width:670px;height:50px;}
