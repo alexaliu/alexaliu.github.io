@@ -6,8 +6,27 @@
 body{
     font-weight: 200;
     color: #222;
-    overflow-y: hidden;
+    overflow-x: hidden !important;
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.nano{ 
+    position: inherit; 
+    width: 16.6666667% ;
+}
+.nano-content{ 
+    /*right: -15px !important;*/
+}
+.nano-pane{ 
+    z-index: 1100;
+    background: #888; 
+    width: 7px !important;
+}
+.nano-slider{
+    z-index: 1100;
+    background: #111; 
+    width: 7px !important;
+    margin: 0 !important;
 }
 
 .page-wrapper-fixed{
@@ -19,7 +38,7 @@ body{
     min-height: 100%;
     padding-top: 15px;
     height: 100%;
-    margin-top: -50px;
+    margin-top: -50px;    
 }
 
 .navbar{
