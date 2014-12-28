@@ -53,13 +53,11 @@ var heightResize = function(){
     if(height1 > height2){
         content.css('height', '100%');
     }
+    $(".nano").nanoScroller();
 }
 
 $( window ).resize(function(){
-    $('.scroll-pane').jScrollPane({contentWidth: '500px'});
     heightResize();
 });
-
-$($(".nano").nanoScroller());
 
 $(heightResize);
