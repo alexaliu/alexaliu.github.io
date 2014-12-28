@@ -1,7 +1,5 @@
 *{
-    -webkit-transition: color 2.5s;
-    -o-transition: color 2.5s;
-    transition: color 2.5s;
+
 }
 body{
     font-weight: 200;
@@ -13,9 +11,6 @@ body{
 .nano{ 
     position: inherit; 
     width: 16.6666667% ;
-}
-.nano-content{ 
-    /*right: -15px !important;*/
 }
 .nano-pane{ 
     z-index: 1100;
@@ -128,10 +123,10 @@ body{
         font-size: 18px;
         text-transform: uppercase;
         cursor: pointer;
+        height: 61.5%;
     }
     .sidebar-list>li{
         padding: 15px;
-        padding-left: 0;
         margin-right: -20px;
         margin-left: -60px;
         text-align: center;
@@ -196,7 +191,22 @@ body{
     background: #f6f6f6;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-/*    
+}
+.content{
+    margin-left: -25px;
+    padding-left: 25px;
+    margin-right: -15px;
+    padding-right: 15px;
+    /*margin-top: -5px;*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.home{
+    height: 100%;
     color: #eee;
     background:  
         linear-gradient(
@@ -205,18 +215,13 @@ body{
         ),
         url('Rejuvenate.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;*/
-    /*background-position: center;*/
+    /*background-attachment: fixed;*/
+    background-position: center;
+    /*background-size: 100% 90%;*/
+    /*background: #2e2e2e;*/
 }
-.content{
-    margin-left: -25px;
-    padding-left: 25px;
-    margin-right: -15px;
-    padding-right: 15px;
-    margin-top: -5px;
-    padding-top: 10px;
-    padding-bottom: 25px;
-
+.resume{
+    height: 100%;
 }
 
 .nodisplay{
