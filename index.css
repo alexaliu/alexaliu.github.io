@@ -14,6 +14,7 @@ body{
     color: #222;
     overflow-x: hidden !important;
     font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
 }
 
 .nano{ 
@@ -184,6 +185,7 @@ body{
     margin: 7.5px;
     text-align: center;
     cursor: pointer;
+    /*width: 31px; Size of the widest icon (mail)*/
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
