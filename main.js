@@ -10,6 +10,12 @@ $('.nav-no-fix').click(function(){
         // $('.nav-no-fix').animateRotate(180, 45);
     }
     navArrowDeg = !navArrowDeg
+    var content = $('.content')
+    if($('.page-wrapper').hasClass('page-wrapper-fixed')){
+        content.css('min-height', 'calc(100vh - 70px)');
+    } else{
+        content.css('min-height', '100vh');
+    }
     heightResize();
 });
 
@@ -34,10 +40,10 @@ $('.sidebar-list>li').click(function(){
     $(this).toggleClass('sidebar-active');
 
     // Swap content text
-    $('.show').toggleClass('show hidden')
-    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
+    // $('.show').toggleClass('show hidden')
+    // $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
 
-    heightResize();
+    // heightResize();
 });
 
 // 100vh is the whole viewport, so setting the content-col to 100vh is 70px too tall because
@@ -45,18 +51,18 @@ $('.sidebar-list>li').click(function(){
 // calc property to properly set the height of the content-col such that it is as tall as it needs to
 // be to not have an overscroll.
 var heightResize = function(){
-    var content = $('.content-col')
-    content.css('height', '100%');
-    var height1 = content.height()
-    if($('.page-wrapper').hasClass('page-wrapper-fixed')){
-        content.css('height', 'calc(100vh - 70px)');
-    } else{
-        content.css('height', '100vh');
-    }
-    var height2 = content.height()
-    if(height1 > height2){
-        content.css('height', '100%');
-    }
+    // var content = $('.content')
+    // content.css('height', '100%');
+    // var height1 = content.height()
+    // if($('.page-wrapper').hasClass('page-wrapper-fixed')){
+    //     content.css('height', 'calc(100vh - 70px)');
+    // } else{
+    //     content.css('height', '100vh');
+    // }
+    // var height2 = content.height()
+    // if(height1 > height2){
+    //     content.css('height', '100%');
+    // }
     $(".nano").nanoScroller();
 }
 
