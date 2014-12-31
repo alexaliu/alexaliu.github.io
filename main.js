@@ -38,16 +38,21 @@ $('.sidebar-list>li').click(function(){
     $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
 
     heightResize();
+    if($('.page-wrapper').hasClass('page-wrapper-static')){
+        $("body.nano").nanoScroller({ scroll: 'top' });
+        // $(".nano").nanoScroller({ scroll: 'bottom' });
+    }
 });
 
-// 100vh is the whole viewport, so setting the content-col to 100vh is 70px too tall because
-// of the navbar. Depending on whether the navbar is sticky(fixed) or not(static), use the CSS3
-// calc property to properly set the height of the content-col such that it is as tall as it needs to
-// be to not have an overscroll.
+
 var heightResize = function(){
     var content = $('.content-col')
     content.css('height', '100%');
     var height1 = content.height()
+    // 100vh is the whole viewport, so setting the content-col to 100vh is 70px too tall because
+    // of the navbar. Depending on whether the navbar is sticky(fixed) or not(static), use the CSS3
+    // calc property to properly set the height of the content-col such that it is as tall as it needs to
+    // be to not have an overscroll.
     if($('.page-wrapper').hasClass('page-wrapper-fixed')){
         content.css('height', 'calc(100vh - 70px)');
     } else{
