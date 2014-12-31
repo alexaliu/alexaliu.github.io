@@ -10,6 +10,7 @@ $('.nav-no-fix').click(function(){
         // $('.nav-no-fix').animateRotate(180, 45);
     }
     navArrowDeg = !navArrowDeg
+    heightResize();
 });
 
 // http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
@@ -39,14 +40,19 @@ $('.sidebar-list>li').click(function(){
     heightResize();
 });
 
-// I think the scrollbars make 100vh not work properly when the content is longer
-// than 100vh, so this will figure out whether the height should be 100% or 100vh,
-// where 100vh will entirely fill up the entire contect column with the proper background
+// 100vh is the whole viewport, so setting the content-col to 100vh is 70px too tall because
+// of the navbar. Depending on whether the navbar is sticky(fixed) or not(static), use the CSS3
+// calc property to properly set the height of the content-col such that it is as tall as it needs to
+// be to not have an overscroll.
 var heightResize = function(){
     var content = $('.content-col')
     content.css('height', '100%');
     var height1 = content.height()
-    content.css('height', '100vh');
+    if($('.page-wrapper').hasClass('page-wrapper-fixed')){
+        content.css('height', 'calc(100vh - 70px)');
+    } else{
+        content.css('height', '100vh');
+    }
     var height2 = content.height()
     if(height1 > height2){
         content.css('height', '100%');
