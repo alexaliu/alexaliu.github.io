@@ -332,6 +332,13 @@ body{
     transition: color 0.2s;
 }
 
+.about{
+    padding-top: 15px;
+    -webkit-transition: padding-top 0.5s;
+    -o-transition: padding-top 0.5s;
+    transition: padding-top 0.5s;
+}
+
 
 .nodisplay{
     display: none;

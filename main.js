@@ -10,7 +10,7 @@ $('.nav-no-fix').click(function(){
         // $('.nav-no-fix').animateRotate(180, 45);
     }
     navArrowDeg = !navArrowDeg
-    heightResize();
+    heightResize(false);
 });
 
 // http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
@@ -28,24 +28,36 @@ $.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete) 
   });
 };
 
+
 $('.sidebar-list>li').click(function(){
     // Swap sidebar colors
     $('.sidebar-active').toggleClass('sidebar-active');
     $(this).toggleClass('sidebar-active');
+});
 
-    // Swap content text
+$('#sidebar-resume, #sidebar-picyourfuture').click(function(){
     $('.show').toggleClass('show hidden')
     $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
+    heightResize(true);
+});
 
-    heightResize();
-    if($('.page-wrapper').hasClass('page-wrapper-static')){
-        $("body.nano").nanoScroller({ scroll: 'top' });
-        // $(".nano").nanoScroller({ scroll: 'bottom' });
-    }
+$('#sidebar-about').click(function(){
+    $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '15px')//.css('height', '100%');
+    $('.about').addClass('show').removeClass('hidden');
+    console.log("Calling heightResize from about")
+    heightResize(true);
+});
+
+$('#sidebar-home').click(function(){
+    $('.resume, .picyourfuture, .about').addClass('hidden').removeClass('show');
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
+    heightResize(true);
 });
 
 
-var heightResize = function(){
+var heightResize = function(adjust){
+    console.log("Begin heightResize");
     var content = $('.content-col')
     content.css('height', '100%');
     var height1 = content.height()
@@ -59,10 +71,15 @@ var heightResize = function(){
         content.css('height', '100vh');
     }
     var height2 = content.height()
+    console.log("Height1 is " + height1 + " and height2 is " + height2);
     if(height1 > height2){
         content.css('height', '100%');
     }
     $(".nano").nanoScroller();
+    if(adjust && $('.page-wrapper').hasClass('page-wrapper-static')){
+        $("body.nano").nanoScroller({ scrollTop: 70 });
+    }
+    console.log("End heightResize")
 }
 
 $( window ).resize(function(){
