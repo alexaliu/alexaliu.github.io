@@ -43,7 +43,7 @@ $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
 
 $('#sidebar-about').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
-    $('.home').addClass('show').removeClass('hidden').css('padding-top', '15px')//.css('height', '100%');
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
     $('.about').addClass('show').removeClass('hidden');
     console.log("Calling heightResize from about")
     heightResize(true);
@@ -83,7 +83,7 @@ var heightResize = function(adjust){
 }
 
 $( window ).resize(function(){
-    heightResize();
+    heightResize(false);
 });
 
-$(heightResize);
+$(heightResize(false));
