@@ -214,6 +214,7 @@ body{
 }
 
 .content-col{
+    display: none;
     margin-top: 14.5px;
     background: #f6f6f6;
     /*height: calc(100vh - 70px);*/

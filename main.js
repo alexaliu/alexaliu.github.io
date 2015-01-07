@@ -36,28 +36,28 @@ $('.sidebar-list>li').click(function(){
 });
 
 $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
-    $('.show').toggleClass('show hidden')
-    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
+    $('.show').toggleClass('show hidden');
+    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).fadeIn(200).toggleClass('show hidden');
     heightResize(true);
 });
 
 $('#sidebar-about').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
-    $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
-    $('.about').addClass('show').removeClass('hidden');
-    console.log("Calling heightResize from about")
+    $('.home').fadeIn(200).addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
+    $('.about').fadeIn(200).addClass('show').removeClass('hidden');
+    // console.log("Calling heightResize from about")
     heightResize(true);
 });
 
 $('#sidebar-home').click(function(){
     $('.resume, .picyourfuture, .about').addClass('hidden').removeClass('show');
-    $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
+    $('.home').fadeIn(200).addClass('show').removeClass('hidden').css('padding-top', '220px');
     heightResize(true);
 });
 
 
 var heightResize = function(adjust){
-    console.log("Begin heightResize");
+    // console.log("Begin heightResize");
     var content = $('.content-col')
     content.css('height', '100%');
     var height1 = content.height()
@@ -68,10 +68,10 @@ var heightResize = function(adjust){
     if($('.page-wrapper').hasClass('page-wrapper-fixed')){
         content.css('height', 'calc(100vh - 70px)');
     } else{
-        content.css('height', '100vh');
+        content.css('height', '101vh');
     }
     var height2 = content.height()
-    console.log("Height1 is " + height1 + " and height2 is " + height2);
+    // console.log("Height1 is " + height1 + " and height2 is " + height2);
     if(height1 > height2){
         content.css('height', '100%');
     }
@@ -79,11 +79,15 @@ var heightResize = function(adjust){
     if(adjust && $('.page-wrapper').hasClass('page-wrapper-static')){
         $("body.nano").nanoScroller({ scrollTop: 70 });
     }
-    console.log("End heightResize")
+    // console.log("End heightResize");
 }
 
-$( window ).resize(function(){
+$(window).resize(function(){
     heightResize(false);
 });
 
-$(heightResize(false));
+$(function(){
+    $('.content-col').fadeIn(200);
+    heightResize(false);
+});
+
