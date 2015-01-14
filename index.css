@@ -236,18 +236,17 @@ body{
 
 .home{
     height: 100%;
-    /*color: #eee;*/
-    color: #3a3a3a;
- /*   background:  
+    color: #eee;
+    /*color: #3a3a3a;*/
+    background:  
         linear-gradient(
-            rgba(46, 46, 46, 0.9), 
+            rgba(46, 46, 46, 0.8), 
             rgba(46, 46, 46, 0.5)
         ),
-        url('Rejuvenate.jpg');*/
+        url('SplitShire-8593-small.jpg');
     /*background: #444;*/
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%; /*cover*/
+    background-size: cover;
     padding-top: 20px;
     -webkit-transition: padding-top 0.5s;
     -o-transition: padding-top 0.5s;
