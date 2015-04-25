@@ -43,15 +43,15 @@ $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
 
 $('#sidebar-about').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
-    $('.home').fadeIn(200).addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
-    $('.about').fadeIn(200).addClass('show').removeClass('hidden');
-    // console.log("Calling heightResize from about")
+    $('.home').fadeIn().addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
+    $('.about').fadeIn(200); //.addClass('show').removeClass('hidden');
     heightResize(true);
 });
 
 $('#sidebar-home').click(function(){
-    $('.resume, .picyourfuture, .about').addClass('hidden').removeClass('show');
-    $('.home').fadeIn(200).addClass('show').removeClass('hidden').css('padding-top', '220px');
+    $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
+    $('.home').fadeIn().addClass('show').removeClass('hidden').css('padding-top', '220px');
+    $('.about').fadeOut(200);
     heightResize(true);
 });
 
