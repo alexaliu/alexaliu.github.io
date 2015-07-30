@@ -329,7 +329,7 @@ body{
 }
 
 .about{
-    padding-top: 15px;
+    padding-top: 20px;
     -webkit-transition: padding-top 0.5s;
     -o-transition: padding-top 0.5s;
     transition: padding-top 0.5s;
@@ -337,6 +337,9 @@ body{
     display: none;
 }
 
+.about-work{
+    font-size: 17.5px;
+}
 
 .nodisplay{
     display: none;
@@ -445,15 +448,16 @@ body{
 .t1{width: 636px;margin-left: 24px;margin-top: 10px;font: 13px 'Source Sans Pro';}
 .t2{width: 636px;margin-left: 24px;margin-top: 5px;font: 11px 'Source Sans Pro';}
 
-.ostem-date{padding-left:60px;}
-.pic-date{padding-left:8px;}
-.la-date{padding-left:15px;}
-.piano-date{padding-left:177.5px;}
+.ostem-date{padding-left:112px;}
+.pic-date{padding-left:18px;}
+.la-date{padding-left:37px;}
+.piano-date{padding-left:227.5px;}
 
 #picyourfuture{
-    width: 60%;
+    width: 70%;
     margin: auto;
     font-size: 20px;
+    padding-top: 30px;
 }
 
 @keyframes slide-from-right {
