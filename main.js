@@ -37,20 +37,20 @@ $('.sidebar-list>li').click(function(){
 
 $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
     $('.show').toggleClass('show hidden');
-    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).fadeIn(200).toggleClass('show hidden');
+    $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
     heightResize(true);
 });
 
 $('#sidebar-about').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
-    $('.home').fadeIn().addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
     $('.about').fadeIn(200); //.addClass('show').removeClass('hidden');
     heightResize(true);
 });
 
 $('#sidebar-home').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
-    $('.home').fadeIn().addClass('show').removeClass('hidden').css('padding-top', '220px');
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
     $('.about').fadeOut(200);
     heightResize(true);
 });
@@ -87,7 +87,7 @@ $(window).resize(function(){
 });
 
 $(function(){
-    $('.content-col').fadeIn(200);
+    // $('.content-col').fadeIn(200);
     heightResize(false);
 });
 

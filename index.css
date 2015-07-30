@@ -19,7 +19,7 @@ body{
 
 .nano{ 
     position: inherit; 
-    width: 16.6666667% ;
+    width: 16.6666667%; /*remove if using fade-from-left-frames*/
 }
 .nano-pane{ 
     z-index: 1100;
@@ -76,7 +76,6 @@ body{
     cursor: default;
     max-height: 65px;
     font-family: 'Lobster', cursive;
-
 }
 .navbar-static-top{
     z-index: 1030;
@@ -214,7 +213,7 @@ body{
 }
 
 .content-col{
-    display: none;
+    /*display: none;*/
     margin-top: 14.5px;
     background: #f6f6f6;
     /*height: calc(100vh - 70px);*/
@@ -228,18 +227,12 @@ body{
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-
 }
 
 .home{
     height: 100%;
     color: #eee;
     /*color: #3a3a3a;*/
-    background:  
-        linear-gradient(
-            rgba(46, 46, 46, 0.5), 
-            rgba(46, 46, 46, 0.5)
-        ), url('SplitShire-8593-small.jpg');
     /*background: #444;*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -247,6 +240,10 @@ body{
     -webkit-transition: padding-top 0.5s;
     -o-transition: padding-top 0.5s;
     transition: padding-top 0.5s;
+    background: linear-gradient(
+            rgba(46, 46, 46, 0.5), 
+            rgba(46, 46, 46, 0.5)
+        ), url('SplitShire-8593-small.jpg');
 }
 .home-hi{
     /*margin: 0 15%;*/
@@ -256,6 +253,8 @@ body{
         width: 75%;
         margin: auto;
         display: block;
+        opacity: 0;
+        animation: from-right 0.5s 0.5s forwards;
     }
     .home{
         padding-top: 100px;
@@ -295,6 +294,7 @@ body{
     font-family: 'Lobster', cursive;
     padding-left: 50px;
 }
+
 .home-text{
     padding-left: 170px;
     padding-top: 22.5px;
@@ -454,4 +454,28 @@ body{
     width: 60%;
     margin: auto;
     font-size: 20px;
+}
+
+@keyframes from-right {
+    from{
+        -moz-transform: translate(105vh, 0);
+        -webkit-transform: translate(105vh, 0);
+        -ms-transform: translate(105vh, 0);
+        -o-transform: translate(105vh, 0);
+        transform: translate(105vh, 0);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+    }
+
+    to{
+        -moz-transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+    }
 }
