@@ -240,10 +240,9 @@ body{
     -webkit-transition: padding-top 0.5s;
     -o-transition: padding-top 0.5s;
     transition: padding-top 0.5s;
-    background: linear-gradient(
-            rgba(46, 46, 46, 0.5), 
-            rgba(46, 46, 46, 0.5)
-        ), url('SplitShire-8593-small.jpg');
+    background: linear-gradient(rgba(46, 46, 46, 0.6), rgba(46, 46, 46, 0.6)), 
+        url('SplitShire-8593-small.jpg');
+    /*background: url('SplitShire-8593-small.jpg');*/
 }
 .home-hi{
     /*margin: 0 15%;*/
@@ -254,7 +253,6 @@ body{
         margin: auto;
         display: block;
         opacity: 0;
-        animation: slide-from-right 0.5s 0.5s forwards;
     }
     .home{
         padding-top: 100px;
@@ -460,13 +458,58 @@ body{
     padding-top: 30px;
 }
 
-@keyframes slide-from-right {
+
+/* Animations */
+
+.slide-from-bottom-short{
+    animation: slide-from-bottom 0.5s 0s forwards;
+}
+.slide-from-bottom-long{
+    animation: slide-from-bottom 0.5s 0.5s forwards;
+}
+
+.fade-in{
+    animation: fade-in 0.5s 0s forwards;
+}
+.fade-out{
+    animation: fade-out 0.5s 0s forwards;
+}
+
+@keyframes fade-in {
     from{
-        -moz-transform: translate(105vh, 0);
-        -webkit-transform: translate(105vh, 0);
-        -ms-transform: translate(105vh, 0);
-        -o-transform: translate(105vh, 0);
-        transform: translate(105vh, 0);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+    }
+
+    to {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+    }
+}
+
+@keyframes fade-out{
+    from{
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+    }
+
+    to {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+    }
+}
+
+@keyframes slide-from-bottom {
+    from{
+        -moz-transform: translate(0, 10vh);
+        -webkit-transform: translate(0, 10vh);
+        -ms-transform: translate(0, 10vh);
+        -o-transform: translate(0, 10vh);
+        transform: translate(0, 10vh);
         opacity: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: alpha(opacity=0);

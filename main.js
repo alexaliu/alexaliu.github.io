@@ -33,10 +33,14 @@ $('.sidebar-list>li').click(function(){
     // Swap sidebar colors
     $('.sidebar-active').toggleClass('sidebar-active');
     $(this).toggleClass('sidebar-active');
+    // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
+    // background image has delay in loading)
+    $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
 });
 
 $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
     $('.show').toggleClass('show hidden');
+    // $('.resume').fadeIn(500);
     $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
     heightResize(true);
 });
@@ -44,16 +48,17 @@ $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
 $('#sidebar-about').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')//.css('height', '100%');
-    $('.about').fadeIn(200); //.addClass('show').removeClass('hidden');
+    $('.about').fadeIn(500); //.addClass('show').removeClass('hidden');
     heightResize(true);
 });
 
 $('#sidebar-home').click(function(){
     $('.resume, .picyourfuture').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
-    $('.about').fadeOut(200);
+    $('.about').fadeOut(500);
     heightResize(true);
 });
+
 
 
 var heightResize = function(adjust){
