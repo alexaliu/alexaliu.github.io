@@ -14,25 +14,26 @@ $('.nav-no-fix').click(function(){
 });
 
 // http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
-$.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete) {
-  var args = $.speed(duration, easing, complete);
-  var step = args.step;
-  return this.each(function(i, e) {
-    args.complete = $.proxy(args.complete, e);
-    args.step = function(now) {
-      $.style(e, 'transform', 'rotate(' + now + 'deg)');
-      if (step) return step.apply(e, arguments);
-    };
+// $.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete) {
+//   var args = $.speed(duration, easing, complete);
+//   var step = args.step;
+//   return this.each(function(i, e) {
+//     args.complete = $.proxy(args.complete, e);
+//     args.step = function(now) {
+//       $.style(e, 'transform', 'rotate(' + now + 'deg)');
+//       if (step) return step.apply(e, arguments);
+//     };
 
-    $({deg: startAngle}).animate({deg: endAngle}, args);
-  });
-};
-
+//     $({deg: startAngle}).animate({deg: endAngle}, args);
+//   });
+// };
 
 $('.sidebar-list>li').click(function(){
     // Swap sidebar colors
     $('.sidebar-active').toggleClass('sidebar-active');
     $(this).toggleClass('sidebar-active');
+    // set url hash param to contain currently clicked subpage
+    location.hash  = $(this).attr('id').slice(8);
     // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
     // background image has delay in loading)
     $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
@@ -58,8 +59,6 @@ $('#sidebar-home').click(function(){
     $('.about').fadeOut(500);
     heightResize(true);
 });
-
-
 
 var heightResize = function(adjust){
     // console.log("Begin heightResize");
@@ -94,5 +93,7 @@ $(window).resize(function(){
 $(function(){
     // $('.content-col').fadeIn(200);
     heightResize(false);
+    // get hash parameter from URL and go there
+    $('#sidebar-' + document.URL.split('#')[1]).trigger("click");
 });
 

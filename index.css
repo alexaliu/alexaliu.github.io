@@ -54,11 +54,11 @@ body{
     background: -o-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
     background: -ms-linear-gradient(top,  #c53c52 0%,#c14f5e 100%);
     background: linear-gradient(to bottom,  #c53c52 0%,#c14f5e 100%);
-    border: none;
     /*width: 100%;*/
     -webkit-transition: width 1s;
     -o-transition: width 1s;
     transition: width 1s;
+    border: 0;
 }
 .navbar-header{
     float: left;
@@ -128,7 +128,6 @@ body{
         font-size: 40px;
         text-transform: uppercase;
         color: #ddd;
-        font-weight: 600;
         overflow: hidden;
         margin: 0 -20px;
         /*padding-right: 10px;*/
@@ -136,6 +135,7 @@ body{
         vertical-align: middle;
         cursor: default;
         max-height: 65px;
+        font-weight: 600;
     }
     .sidebar-list-div{
         margin-left: -20px;
