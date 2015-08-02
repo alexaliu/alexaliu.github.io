@@ -468,6 +468,10 @@ body{
     animation: slide-from-bottom 0.5s 0.5s forwards;
 }
 
+.slide-to-top{
+    animation: slide-to-top 0.5s 0s forwards;
+}
+
 .fade-in{
     animation: fade-in 0.5s 0s forwards;
 }
@@ -497,6 +501,30 @@ body{
     }
 
     to {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+    }
+}
+
+@keyframes slide-to-top {
+    from{
+        -moz-transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+    }
+
+    to{
+        -moz-transform: translate(0, -10vh);
+        -webkit-transform: translate(0, -10vh);
+        -ms-transform: translate(0, -10vh);
+        -o-transform: translate(0, -10vh);
+        transform: translate(0, -10vh);
         opacity: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: alpha(opacity=0);
