@@ -33,16 +33,17 @@ $('.sidebar-list>li').click(function(){
     $('.sidebar-active').toggleClass('sidebar-active');
     $(this).toggleClass('sidebar-active');
     // set url hash param to contain currently clicked subpage
-    location.hash  = $(this).attr('id').slice(8);
-    // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
-    // background image has delay in loading)
-    $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
+    location.hash = $(this).attr('id').slice(8);
+
 });
 
 $('#sidebar-resume, #sidebar-picyourfuture').click(function(){
     $('.show').toggleClass('show hidden');
     // $('.resume').fadeIn(500);
     $('.' + $('.sidebar-active').text().toLowerCase().replace(/ /g,'')).toggleClass('show hidden');
+    // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
+    // background image has delay in loading)
+    $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
     heightResize(true);
 });
 
