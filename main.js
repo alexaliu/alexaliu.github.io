@@ -22,10 +22,14 @@ $('.sidebar-list>li').click(function(){
 
 });
 
-$('#sidebar-resume').click(function(event){
-    console.log("clicked on resume/pic", event)
-    $('.show').toggleClass('show hidden');
-    $('.resume').addClass('show').removeClass('hidden')
+$('#sidebar-rants').click(function(){
+    $('.show, .rants').toggleClass('show hidden');
+    $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
+    heightResize(true);
+});
+
+$('#sidebar-resume').click(function(){
+    $('.show, .resume').toggleClass('show hidden');
 
     // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
     // background image has delay in loading)
@@ -33,17 +37,15 @@ $('#sidebar-resume').click(function(event){
     heightResize(true);
 });
 
-$('#sidebar-about').click(function(event){
-    console.log("clicked on about", event)
-    $('.resume').addClass('hidden').removeClass('show');
+$('#sidebar-about').click(function(){
+    $('.show').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')
     $('.about').fadeIn(500);
     heightResize(true);
 });
 
-$('#sidebar-home').click(function(event){
-    console.log("clicked on home", event)
-    $('.resume').addClass('hidden').removeClass('show');
+$('#sidebar-home').click(function(){
+    $('.show').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
     $('.about').fadeOut(500);
     heightResize(true);

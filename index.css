@@ -287,7 +287,7 @@ body{
     }
 }
 .home-header{
-    font-size: 82px;
+    font-size: 8rem;
     font-weight: 400;
     font-family: 'Lobster', cursive;
     padding-left: 50px;
@@ -295,11 +295,17 @@ body{
 
 .home-text{
     padding-left: 170px;
-    padding-top: 22.5px;
-    font-size: 25px;
+    padding-top: 37.5px;
+    font-size: 3rem;
 }
 .resume{
     height: 100%;
+}
+.resume-outdated {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 .resume-pdf{
     font-size: 30px;
@@ -327,7 +333,8 @@ body{
 }
 
 .about{
-    padding-top: 20px;
+    padding-top: 15px;
+    float: left;
     -webkit-transition: padding-top 0.5s;
     -o-transition: padding-top 0.5s;
     transition: padding-top 0.5s;
