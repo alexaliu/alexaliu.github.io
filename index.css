@@ -366,7 +366,7 @@ body{
 
 /*HTML Resume*/
 #page_1 {
-    position:relative; overflow: hidden;margin: 20px auto 68px auto;
+    position:relative; overflow: hidden;margin: 10px auto 68px auto;
     padding: 15px 15px 35px 35px;border: 1px solid #D5D5D5;width: 730px;
     -webkit-box-shadow: 2px 2px 6px #ddd;
     box-shadow: 2px 2px 6px #ddd;
