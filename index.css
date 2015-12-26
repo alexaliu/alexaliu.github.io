@@ -303,9 +303,8 @@ body{
 }
 .resume-outdated {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
-    text-transform: uppercase;
 }
 .resume-pdf{
     font-size: 30px;
