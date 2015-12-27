@@ -229,20 +229,24 @@ body{
     padding-bottom: 10px;
 }
 
-.home{
-    height: 100%;
+.image-background {
     color: #eee;
-    /*color: #3a3a3a;*/
-    /*background: #444;*/
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 20px;
-    -webkit-transition: padding-top 0.5s;
-    -o-transition: padding-top 0.5s;
-    transition: padding-top 0.5s;
-    background: linear-gradient(rgba(46, 46, 46, 0.6), rgba(46, 46, 46, 0.6)), 
+    background: linear-gradient(rgba(46, 46, 46, 0.6), rgba(46, 46, 46, 0.6)),
         url('SplitShire-8593-small.jpg');
-    /*background: url('SplitShire-8593-small.jpg');*/
+}
+
+.blank-background {
+    color: #3a3a3a;
+}
+
+.home{
+    height: 100%;
+    padding-top: 20px;
+    -webkit-transition: padding-top 0.5s, color 0.5s;
+    -o-transition: padding-top 0.5s, color 0.5s;
+    transition: padding-top 0.5s, color 0.5s;
 }
 .home-hi{
     /*margin: 0 15%;*/
@@ -456,14 +460,6 @@ body{
 .pic-date{padding-left:18px;}
 .la-date{padding-left:37px;}
 .piano-date{padding-left:227.5px;}
-
-#picyourfuture{
-    width: 70%;
-    margin: auto;
-    font-size: 20px;
-    padding-top: 30px;
-}
-
 
 /* Animations */
 

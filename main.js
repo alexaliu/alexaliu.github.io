@@ -23,30 +23,37 @@ $('.sidebar-list>li').click(function(){
 });
 
 $('#sidebar-rants').click(function(){
-    $('.show, .rants').toggleClass('show hidden');
+    $('.show').addClass('hidden').removeClass('show');
+    $('.rants').addClass('show').removeClass('hidden');
     $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
     heightResize(true);
 });
 
 $('#sidebar-resume').click(function(){
-    $('.show, .resume').toggleClass('show hidden');
+    $('.show').addClass('hidden').removeClass('show');
+    $('.resume').addClass('show').removeClass('hidden');
 
+    $('.home').addClass('show').removeClass('hidden').css('padding-top', '10px');
+    $('.about, .about-work').addClass('show').removeClass('hidden');
+    $('.about-misc').addClass('hidden').removeClass('show');
+    $('.content').removeClass('image-background').addClass('blank-background');
     // Switch slide up animation to play immediately instead of with delay (delay used at first load because 
     // background image has delay in loading)
-    $('.home-hi').removeClass('slide-from-bottom-long').addClass('slide-from-bottom-short');
     heightResize(true);
 });
 
 $('#sidebar-about').click(function(){
     $('.show').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '40px')
-    $('.about').fadeIn(500);
+    $('.content').addClass('image-background').removeClass('blank-background');
+    $('.about, .about-work, .about-misc').addClass('show').removeClass('hidden').fadeIn(500);
     heightResize(true);
 });
 
 $('#sidebar-home').click(function(){
     $('.show').addClass('hidden').removeClass('show');
     $('.home').addClass('show').removeClass('hidden').css('padding-top', '220px');
+    $('.content').addClass('image-background').removeClass('blank-background');
     $('.about').fadeOut(500);
     heightResize(true);
 });
